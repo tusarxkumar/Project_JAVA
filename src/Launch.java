@@ -33,12 +33,19 @@ public class Launch{
                 j1.setTech(sc.nextLine());
 
                 jobs[i] = j1;
+                i++;
 
                 System.out.println(j1.toString());
                 System.out.println("We will get back to you asap....");
             } else if (role.equals("JS")) {
                 for (Job job : jobs){
                     if (job != null)
+                        System.out.println(job);
+                }
+                System.out.println("Enter the text you want to search: ");
+                String input = sc.nextLine();
+                for (Job job : jobs) {
+                    if (job != null && (job.getTech().contains(input) || job.getProfile().contains(input)))
                         System.out.println(job);
                 }
             }
